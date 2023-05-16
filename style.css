@@ -4,37 +4,57 @@
   font-size: 100%;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  background-color: rgb(208, 209, 210);
 }
 
 header {
-  background-color: rgb(255, 255, 255, 0.9);
+  background-color: rgb(208, 209, 210);
   width: 100%;
   margin-bottom: 50px;
   position: fixed;
   padding: 5px 50px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   box-shadow: 1px 1px 10px black;
+  z-index: 2;
 }
 
 header img {
-  width: 300px;
+  width: 20%;
 }
 
-a {
-  text-decoration: none;
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
   cursor: pointer;
-  opacity: 0.8;
-  padding: 0 10px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
 }
 
-a:hover {
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: rgb(13, 170, 100);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+nav a:hover::after,
+nav a:focus::after {
   opacity: 1;
-}
-
-a:visited, a:hover, a:active {
-  color:#f37021;
+  transform: translate3d(0, 0.2em, 0);
 }
 
 nav, ul {
@@ -42,12 +62,13 @@ nav, ul {
 }
 
 nav a {
-  color:#006734;  
+  color: rgb(2, 89, 196);  
 }
 
 .hero {
   background-image: url(images/PontePB.png);
   background-position: center center;
+  background-color: rgb(208, 209, 210);
   min-height: 100vh;
   padding-top: 50px;
   background-size: cover;
@@ -55,64 +76,78 @@ nav a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color:#006734;
   text-align: center;
 }
 
-.hero img {
-  max-width: 80%;
-  margin-bottom: 150px;
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 5px;
+  gap: 20px;
+  color: rgb(2, 89, 196);
 }
 
 .hero h1 {
   width: 80%;
   font-size: 50px;
   margin-bottom: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
   padding: 20px;
+  background: -webkit-linear-gradient( rgb(2, 89, 196), rgb(13, 170, 100));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.hero h3 {
+.hero-content h3 {
   width: 80%;
   font-size: 25px;
   margin-bottom: 30px;
-  background-color: rgba(255, 255, 255, 0.8);
-  padding: 20px;
 }
 
-.hero .btn {
-  background-color:#f37021;
-  border-radius: 15px;
-  color: #ffffff;
-  padding: 20px 50px;
-  margin-bottom: 50px;
-  text-transform: uppercase;
-  font-size: large;
-  box-shadow: 1px 1px 10px black;
+.hero-content img {
+  width: 20rem;
 }
 
-.know-the-farao {
+.about {
   padding: 100px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(208, 209, 210);
+  font-weight: 700;
 }
 
-.know-the-farao h3 {
+.about_content{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 5px;
+  gap: 20px;
+  
+}
+
+span {
+  color: rgb(7, 114, 66);
+}
+
+.about h3 {
   font-size: 25px;
   margin-bottom: 35px;
   text-align: center;
-  color: black;
+  color: rgb(7, 114, 66);
 }
 
-.know-the-farao p {
+.about p {
   max-width: 800px;
   margin-bottom: 35px;
-  text-align: center;
-  color: black;
+  text-align: justify;
+  color: rgb(32, 32, 32);
+  
 }
 
-.know-the-farao hr {
+.about hr {
   width: 200px;
   height: 2px;
   margin-bottom: 70px;
@@ -120,7 +155,7 @@ nav a {
   background-color: black;
 }
 
-.know-the-farao .grid {
+.about .grid {
   max-width: 85%;
   display: flex;
   justify-content: center;
@@ -135,99 +170,112 @@ nav a {
   /* box-shadow: 1px 1px 10px black; */
 }
 
-.store {
-  background-color: #006734;
+.participar {
   padding: 100px 50px;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   width: 100%;
+  color: black;
 }
 
-.store h3 {
+.participar_content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+.participar h3 {
+  color: rgb(7, 114, 66);
+}
+
+.left_content {
+  width: 50%;
+}
+
+form {
+  width: 40%;
+  padding: 10px;
+}
+
+form label {
+  font-size: 10px;
+  color: rgb(2, 89, 196);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input, form textarea{
+  font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 10px;
+	margin: 0;
+	outline: 0;
+	padding: 5px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 5px;
+}
+
+.inputBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(2, 89, 196);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.participar h3 {
   font-size: 25px;
   margin-bottom: 35px;
   text-align: center;
-  color: white;
 }
 
-.store p {
+.participar p {
   max-width: 800px;
   margin-bottom: 35px;
   text-align: center;
-  color: white;
 }
 
-.store hr {
+.participar hr {
   width: 200px;
   height: 2px;
   margin-bottom: 70px;
   border: none;
-  background-color: white;
 }
 
-.store .grid {
+.participar .grid {
   display: flex;
 }
 
-.store .grid li {
+.participar .grid li {
   padding: 0 50px;
   text-align: center;
 }
 
-.store .grid li i {
-  color: #f37021;
+.participar .grid li i {
+  color: rgb(2, 89, 196);;
   font-size: 80px;
   margin-bottom: 30px;
 }
 
-.store .grid li h4 {
+.participar .grid li h4 {
   font-size: 25px;
-  color: #f37021;
+  color: rgb(2, 89, 196);;
   margin-bottom: 30px;
-}
-
-.newsletter {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 50px;
-}
-
-.newsletter h3 {
-  font-size: 25px;
-  text-transform: uppercase;
-  margin-bottom: 35px;
-  text-align: center;
-  color: black;
-}
-
-.newsletter p {
-  max-width: 800px;
-  margin-bottom: 35px;
-  text-align: center;
-  color: black;
-}
-
-.newsletter form {
-  display: flex;
-  flex-direction: column;
-  align-items:flex-start;
-  justify-content: center;
-}
-
-.newsletter input {
-  width: 600px;
-  padding: 15px;
-  border-radius: 4px;
-  margin-right: 15px;
-  margin-bottom: 15px;
-}
-
-.newsletter img {
-  border-radius: 25px;
-  height: 400px;
-  margin-right: 25px;
 }
 
 .flex-container {
@@ -238,25 +286,17 @@ nav a {
   align-items: flex-start; /*alinhar items por cima*/
 }
 
-.newsletter button {
-  padding: 15px;
-  background-color: #f37021;
-  color: white;
-  text-transform: uppercase;
-  border: none;
-  border-radius: 4px;
-}
-
 footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #006734;
+  background-color:rgb(208, 209, 210);
   padding: 50px 0;
+  color: black
 }
 
 footer h3 {
-  color: #f37021;
+  color: rgb(7, 114, 66);
 }
 
 footer ul {
@@ -270,30 +310,14 @@ padding: 50px;
 }
 
 footer ul li i {
-  color: #ffffff;
+  color: rgb(7, 114, 66);
   font-size: 50px;
 }
 
 footer p {
-  color: #ffffff;
   text-align: center;
 }
 
-/* footer ul li:nth-child(1) {
-  order: 1;
-}
-
-footer ul li:nth-child(2) {
-  order: 2;
-}
-
-footer ul li:nth-child(3) {
-  order: 3;
-}
-
-footer ul li:nth-child(4) {
-  order: 4;
-} */
 
 @media screen and (max-width: 600px) {
   header nav {
@@ -329,17 +353,17 @@ footer ul li:nth-child(4) {
     box-shadow: 1px 1px 10px black;
   }
 
-  .know-the-farao {
+  .about {
     padding: 30px 10px;
   }
 
-  .know-the-farao .grid {
+  .about .grid {
     width: 100%;
     height: auto;
     padding-bottom: 5px;
   }
 
-  .know-the-farao img {
+  .about img {
     width: 100%;
     height: auto;
     padding-bottom: 5px;

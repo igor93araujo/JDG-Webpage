@@ -1,0 +1,400 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  background-color: rgb(208, 209, 210);
+}
+
+header {
+  background-color: rgb(208, 209, 210);
+  width: 100%;
+  margin-bottom: 50px;
+  position: fixed;
+  padding: 5px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 1px 10px black;
+  z-index: 2;
+}
+
+header img {
+  width: 20%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  padding: 0.2em 0;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: rgb(13, 170, 100);
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+nav a:hover::after,
+nav a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+nav, ul {
+  list-style: none;
+}
+
+nav a {
+  color: rgb(2, 89, 196);  
+}
+
+.hero {
+  background-image: url(images/PontePB.png);
+  background-position: center center;
+  background-color: rgb(208, 209, 210);
+  min-height: 100vh;
+  padding-top: 50px;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 5px;
+  gap: 20px;
+  color: rgb(2, 89, 196);
+}
+
+.hero h1 {
+  width: 80%;
+  font-size: 50px;
+  margin-bottom: 15px;
+  padding: 20px;
+  background: -webkit-linear-gradient( rgb(2, 89, 196), rgb(13, 170, 100));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content h3 {
+  width: 80%;
+  font-size: 25px;
+  margin-bottom: 30px;
+}
+
+.hero-content img {
+  width: 20rem;
+}
+
+.about {
+  padding: 100px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(208, 209, 210);
+  font-weight: 700;
+}
+
+.about_content{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 80%;
+  padding: 5px;
+  gap: 20px;
+  
+}
+
+span {
+  color: rgb(7, 114, 66);
+}
+
+.about h3 {
+  font-size: 25px;
+  margin-bottom: 35px;
+  text-align: center;
+  color: rgb(7, 114, 66);
+}
+
+.about p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: justify;
+  color: rgb(32, 32, 32);
+  
+}
+
+.about hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+  background-color: black;
+}
+
+.about .grid {
+  max-width: 85%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.grid img {
+  /* margin-right: 50px;
+  margin-bottom: 50px; */
+  height: 300px;
+  padding: 20px;
+  /* box-shadow: 1px 1px 10px black; */
+}
+
+.participar {
+  padding: 100px 50px;
+  align-items: center;
+  width: 100%;
+  color: black;
+}
+
+.participar_content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: center;
+}
+
+.participar h3 {
+  color: rgb(7, 114, 66);
+}
+
+.left_content {
+  width: 50%;
+}
+
+form {
+  width: 40%;
+  padding: 10px;
+}
+
+form label {
+  font-size: 10px;
+  color: rgb(2, 89, 196);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+
+form input, form textarea{
+  font-family: Georgia, "Times New Roman", Times, serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 10px;
+	margin: 0;
+	outline: 0;
+	padding: 5px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 5px;
+}
+
+.inputBtn {
+  width: 100%;
+  padding: 10px;
+  background-color: rgb(2, 89, 196);
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  font-size: 10px;
+  margin-bottom: 5px;
+}
+
+.participar h3 {
+  font-size: 25px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.participar p {
+  max-width: 800px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.participar hr {
+  width: 200px;
+  height: 2px;
+  margin-bottom: 70px;
+  border: none;
+}
+
+.participar .grid {
+  display: flex;
+}
+
+.participar .grid li {
+  padding: 0 50px;
+  text-align: center;
+}
+
+.participar .grid li i {
+  color: rgb(2, 89, 196);;
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+.participar .grid li h4 {
+  font-size: 25px;
+  color: rgb(2, 89, 196);;
+  margin-bottom: 30px;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item{
+  align-items: flex-start; /*alinhar items por cima*/
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:rgb(208, 209, 210);
+  padding: 50px 0;
+  color: black
+}
+
+footer h3 {
+  color: rgb(7, 114, 66);
+}
+
+footer ul {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 25px;
+}
+
+footer ul li {
+padding: 50px;
+}
+
+footer ul li i {
+  color: rgb(7, 114, 66);
+  font-size: 50px;
+}
+
+footer p {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 600px) {
+
+  header {
+    justify-content: center;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero img {
+    max-width: 80%;
+    width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+  
+  .hero h3 {
+    font-size: 20px;
+  }
+
+  .about {
+    padding: 20px 5px;
+  }
+
+  .about_content {
+    flex-direction: column;
+  }
+
+  .about h3 {
+    font-size: 20px;
+  }
+
+  .participar_content {
+    flex-direction: column;
+  }
+
+  .left_content {
+    width: 100%;
+  }
+
+  form {
+    width: 100%;
+  }
+
+  form label {
+    font-size: 15px;
+  }
+
+  form input, form textarea{
+    font-size: 15px;
+  }
+
+  footer ul {
+    max-width: 90%;
+    padding-left: 0rem;
+    margin-left: 35px;
+  }
+
+  footer ul li {
+    padding-left: 0rem;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  footer h3 {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  footer p {
+    text-align: center;
+    font-size: 15px;
+    max-width: 90%;
+  }
+  
+}

@@ -375,9 +375,9 @@ footer p {
   }
 
   footer ul {
+    max-width: 90%;
     padding-left: 0rem;
     margin-left: 35px;
-    max-width: 90%;
   }
 
   footer ul li {

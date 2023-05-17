@@ -1,6 +1,7 @@
 const menu = document.querySelector('#menu')
+
 const showHamburguer = () => {
-  if(window.innerWidth <= 600){
+  if(window.innerWidth <= 800){
     menu.classList = 'bi bi-list showMenu'
 } else {
     menu.classList = 'hideMenu'
@@ -17,6 +18,6 @@ const handleMenu = () => {
     getNav.classList.add('menuNavOff');
   }
 }
-  
+
 menu.addEventListener('click', handleMenu);
 window.addEventListener('resize', showHamburguer);

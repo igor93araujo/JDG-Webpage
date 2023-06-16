@@ -20,4 +20,5 @@ const handleMenu = () => {
 }
 
 menu.addEventListener('click', handleMenu);
+window.onload = showHamburguer;
 window.addEventListener('resize', showHamburguer);
